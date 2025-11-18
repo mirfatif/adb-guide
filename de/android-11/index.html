@@ -1,0 +1,992 @@
+
+<!doctype html>
+<html lang="de" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Android 11+ Leitfaden für drahtlose Debugging — verwenden Sie eingebautes Wireless Debugging, mDNS Entdeckung, Paarungsmethoden (Benachrichtigung/Split-Screen) und Wi-Fi-Notizen.">
+      
+      
+        <meta name="author" content="Irfan Latif">
+      
+      
+        <link rel="canonical" href="https://mirfatif.github.io/adb-guide/de/android-11/">
+      
+      
+        <link rel="prev" href="../android-10/">
+      
+      
+        <link rel="next" href="../adb-connect-svc/">
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
+    
+    
+      
+        <title>Android 11 und höher - ADB Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/media.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mdns-svc" class="md-skip">
+          Zum Inhalt
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Kopfzeile">
+    <a href="../" title="ADB Guide" class="md-header__button md-logo" aria-label="ADB Guide" data-md-component="logo">
+      
+  <img src="../../img/logo.webp" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ADB Guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Android 11 und höher
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Sprache wechseln">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../android-11/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="de" class="md-select__link">
+              Deutsch
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../es/android-11/" hreflang="es" class="md-select__link">
+              español
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../fr/android-11/" hreflang="fr" class="md-select__link">
+              français
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../pt-BR/android-11/" hreflang="pt-BR" class="md-select__link">
+              português
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../ru/android-11/" hreflang="ru" class="md-select__link">
+              русский
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../ar/android-11/" hreflang="ar" class="md-select__link">
+              العربية
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../zh/android-11/" hreflang="zh" class="md-select__link">
+              中文
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Suche" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Suche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Zurücksetzen" aria-label="Zurücksetzen" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Suche wird initialisiert
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../" title="ADB Guide" class="md-nav__button md-logo" aria-label="ADB Guide" data-md-component="logo">
+      
+  <img src="../../img/logo.webp" alt="logo">
+
+    </a>
+    ADB Guide
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ADB-Kopplungs-/Verbindungsanleitung
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adb-limits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Einschränkungen von ADB
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev-opts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Entwickleroptionen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../android-10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Android 10 und darunter
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Android 11 und höher
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Android 11 und höher
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mdns-svc" class="md-nav__link">
+    <span class="md-ellipsis">
+      mDNS-Service
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pair" class="md-nav__link">
+    <span class="md-ellipsis">
+      ADB Paarung / Verbinden
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ADB Paarung / Verbinden">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pair-svc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kopplungsmethode 1: Benachrichtigung
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pair-screen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paarmethode 2: Split-Screen
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adb-wifi-dependency" class="md-nav__link">
+    <span class="md-ellipsis">
+      ADB ist abhängig von Wi-Fi
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Dienste
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Dienste
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adb-connect-svc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ADB Connect-Dienst
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Apps
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Apps
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/mirfatif/PermissionManagerX" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Berechtigungs-Manager X
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/mirfatif/WhatsRunning" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WhatsRunning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/mirfatif/Fyrypt" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fyrypt
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/mirfatif/Backopier" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Backopier
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Android-FAQs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Android-FAQs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://mirfatif.github.io/IAnswers" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Häufig gestellte Fragen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Android 11 und höher</h1>
+
+<div class="admonition note">
+<p class="admonition-title">Notiz</p>
+<p>Verwenden von Android 10 oder einer früheren Version? Folge der <a href="../android-10/">Android 10</a> Anleitung.</p>
+</div>
+<p>Auf Android 11 und höher ist es möglich, Wireless Debugging zu aktivieren, ohne sich mit einem PC zu verbinden. Es gibt eine integrierte Option, um <strong>Wireless Debugging</strong> (über Wi-Fi) zu aktivieren.</p>
+<h2 id="mdns-svc">mDNS-Service<a class="headerlink" href="#mdns-svc" title="Permanent link">&para;</a></h2>
+<p>Android hat einen Dienst namens <code>mDNS</code> (Multi-cast Domain Name System), der die Entdeckung von Diensten im lokalen Netzwerk erleichtert. <code>adb</code> verlässt sich auf diesen Service, um Geräte zu entdecken und automatisch zu verbinden, sobald sie gepaart sind.</p>
+<p>Wenn der <code>mDNS</code> Dienst korrekt funktioniert, müssen Sie nicht manuell die Paarungs- und Verbindungs-Ports eingeben, sondern <strong>nur den Paarungscode</strong>. Die App entdeckt automatisch die Ports, die den <code>mDNS</code> Dienst nutzen.</p>
+<p>Wenn der <code>mDNS</code> Dienst auf Ihrem Gerät nicht funktioniert, können Sie ein paar Dinge versuchen:</p>
+<ul>
+<li>Das Deaktivieren der <strong>Wireless Debugging</strong> (und <strong>USB Debugging</strong>) Force startet den <code>mdnsd</code> Dienst (kann nicht manuell ohne Root durchgeführt werden).</li>
+<li>Erzwinge das Stoppen der App erzwingt die <code>mDNS</code> Broadcast-Zuhörer.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Notiz</p>
+<p>Bevor du fortfährst, stelle bitte sicher, dass du die aktiviert hast <a href="../dev-opts/">Entwickleroptionen</a>.</p>
+</div>
+<h2 id="pair">ADB Paarung / Verbinden<a class="headerlink" href="#pair" title="Permanent link">&para;</a></h2>
+<p>Aktiviere <strong>Wireless Debugging</strong> in Entwickler-Optionen, und überprüfe auch <strong>Deaktiviere ADB-Autorisierungs-Timeout</strong> um zu vermeiden, dass die Paarungsschritte immer wieder wiederholt werden.</p>
+<p><img alt="Anschluss für kabellose ADB-Verbindung" class="media" src="../../img/adb-in-dev-opts-11.webp" /></p>
+<p>Es ist ein 2-Schritt-Prozess:</p>
+<ul>
+<li>Paarung (benötigt Paarport und Code)</li>
+<li>Verbinden (benötigt Verbindungs-Port)</li>
+</ul>
+<p>Pairing ist ein Authentifizierungsmechanismus ähnlich wie Bluetooth-Paarung. Während der Verbindung ist ähnlich der alten <a href="../android-10/#connect">TCP/IP-Verbindung</a>.</p>
+<p><img alt="Anschluss für drahtlose ADB-Verbindung" class="media" src="../../img/android-11-conn-port.webp" /> <img alt="Anschluss für drahtlose ADB-Kopplung" class="media" src="../../img/android-11-pair-port.webp" /></p>
+<p>Es gibt 2 Optionen, um das Paar und die Verbindung durchzuführen. Fahren Sie mit jedem Komfort, den Sie finden.</p>
+<h3 id="pair-svc">Kopplungsmethode 1: Benachrichtigung<a class="headerlink" href="#pair-svc" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Verbinden Sie Ihr Gerät mit einem Wi-Fi-Netzwerk.</li>
+<li>Öffne die App und tippe auf <strong>ADB Access</strong>. Unter Kopplungsoption 1 tippen Sie auf <em>"Benachrichtigung anzeigen</em>, um den Paarungsdienst zu starten. Es erscheint eine Benachrichtigung.</li>
+<li>Aktiviere <strong>Wireless Debugging</strong> in Entwickler-Optionen.</li>
+<li>Öffne <strong>Wireless Debugging</strong> Bildschirm und tippe auf <em>"Gerät mit Paarcode"</em>.</li>
+<li>Beachte die (1) <strong>Paarungsport Nummer</strong>, (2) <strong>Paarungscode</strong>, und (3) <strong>Verbindungsport Nummer</strong>.</li>
+<li>Geben Sie die 3 Parameter in der Benachrichtigung einzeln wie gewünscht ein. Drücken Sie die Taste Enter / Senden in der Benachrichtigung nach Eingabe der Werte.</li>
+</ul>
+<p>Die Paarung erfolgt nach Eingabe beider Paarungsparameter. Während der Verbindung wird sobald der Verbindungs-Port eingegeben wird.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Sie werden nicht aufgefordert, die Paarungs- und Verbindungsporte einzugeben, wenn <a href="#mdns-svc">mDNS service</a> korrekt funktioniert.</p>
+</div>
+<video class="media" controls muted>
+    <source src="../../img/android-11-pair-svc.mp4" type="video/webm">
+    Android 11 ADB Pairing Guide
+</video>
+
+<h3 id="pair-screen">Paarmethode 2: Split-Screen<a class="headerlink" href="#pair-screen" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Verbinden Sie Ihr Gerät mit einem Wi-Fi-Netzwerk.</li>
+<li>Öffne die App und tippe auf <strong>ADB Access</strong>. Tippe auf <em>"Entwickleroptionen öffnen"</em>, um dasselbe zu öffnen.</li>
+<li>Aktiviere <strong>Wireless Debugging</strong> in Entwickler-Optionen.</li>
+<li>Öffne <strong>Wireless Debugging</strong> Bildschirm und tippe auf <em>"Gerät mit Paarcode"</em>.</li>
+<li>Beachte die (1) <strong>Paarungsport Nummer</strong>, (2) <strong>Paarungscode</strong>, und (3) <strong>Verbindungsport Nummer</strong>.</li>
+<li>Wechseln Sie zu <a href="https://developer.android.com/develop/ui/compose/layouts/adaptive/support-multi-window-mode#split-screen_mode">Split-Screen</a>, um die App und Entwickleroptionen gleichzeitig zu öffnen.</li>
+<li>In der App scrollen Sie zur Pairing Option 2.</li>
+<li>Geben Sie den Paarcode und den Port ein und tippen Sie auf die Schaltfläche <em>"Paaren"</em>. Paarung wird durchgeführt.</li>
+<li>Nach erfolgreicher Paarung wird der Verbindungsbereich geöffnet. Geben Sie den Verbindungsanschluss ein und tippen Sie auf <em>"Verbinden"</em>. Verbindung ausgeführt.</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Sie müssen die Paarungs- und Verbindungsporte nicht manuell eingeben, wenn <a href="#mdns-svc">mDNS service</a> korrekt funktioniert. Diese Felder sind automatisch ausgefüllt.</p>
+</div>
+<video class="media" controls muted>
+    <source src="../../img/android-11-pair-screen.mp4" type="video/webm">
+    Android 11 ADB Pairing Guide
+</video>
+
+<div class="admonition note">
+<p class="admonition-title">Notiz</p>
+<p>Du solltest das <strong>Wireless Debugging</strong> oder <strong>USB Debugging</strong> in Entwickleroptionen aktivieren. Durch Deaktivieren des ADB wird die ADB-App von ADB getrennt.</p>
+</div>
+<h2 id="adb-wifi-dependency">ADB ist abhängig von Wi-Fi<a class="headerlink" href="#adb-wifi-dependency" title="Permanent link">&para;</a></h2>
+<p>Ein Problem beim Koppeln ist, dass du das Gerät mit einem WLAN-Netzwerk verbunden lassen musst, damit das <strong>drahtlose Debugging</strong> aktiviert bleibt. Aber das Gerät kann intermittal von einem Wi-Fi-Netzwerk trennen, insbesondere wenn der Bildschirm ausgeschaltet ist. In diesem Fall verliert die App die ADB-Verbindung. Das kann frustrierend sein.</p>
+<p>Es gibt zwei mögliche Lösungen für dieses Problem:</p>
+<ol>
+<li>
+<p>Aktiviere <strong>USB Debugging</strong> zusammen mit <strong>Wireless Debugging</strong> bevor du Paarung durchführst.</p>
+</li>
+<li>
+<p>Oder wählen Sie die Option <strong>Auto-Wechsel zu TCP/IP</strong> in den App-Einstellungen. Es startet den ADB-Daemon (<code>adbd</code>) im Legacy <a href="../android-10/">TCP/IP-Modus</a> nach jeder erfolgreichen Paarung neu.</p>
+<p><img alt="Automatischer Wechsel zu TCP/IP" class="media" src="../../img/auto-switch-to-tcp-ip.webp" /></p>
+</li>
+</ol>
+<p>Nach jedem Paar kannst du nun das <strong>Wireless Debugging</strong> ausschalten und das <strong>USB Debugging</strong> aktivieren.</p>
+<p>Ein weiterer Vorteil des zweiten Ansatzes ist, dass selbst wenn du das <strong>USB-Debugging</strong> deaktivierst, aktivieren Sie es einfach und die App sollte sich mit ADB verbinden. Es ist keine erneute Paarung erforderlich, es sei denn, Sie starten das Gerät neu. Es liegt daran, dass die TCP/IP-Einstellungen (System-Eigenschaft: <code>service.adb.tcp.port</code>) nicht zurückgesetzt werden, wenn <strong>USB-Debugging</strong> deaktiviert ist. Weitere Details <a href="https://android.stackexchange.com/a/232083/218526">here</a>.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Zurück zum Seitenanfang
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://crowdin.com/project/adb-guide" target="_blank" rel="noopener" title="Translation" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant.progress", "navigation.sections", "navigation.expand", "navigation.path", "navigation.indexes", "navigation.top", "toc.follow", "toc.integrate"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../../javascript/language.js"></script>
+      
+    
+  </body>
+</html>
