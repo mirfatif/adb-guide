@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
         <loc>https://mirfatif.github.io/adb-guide/</loc>
-        <lastmod>2025-11-19</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://mirfatif.github.io/adb-guide/"/>
         <xhtml:link rel="alternate" hreflang="ar" href="https://mirfatif.github.io/adb-guide/ar/"/>
@@ -15,7 +15,7 @@
     </url>
     <url>
         <loc>https://mirfatif.github.io/adb-guide/adb-connect-svc/</loc>
-        <lastmod>2025-11-19</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://mirfatif.github.io/adb-guide/adb-connect-svc/"/>
         <xhtml:link rel="alternate" hreflang="ar" href="https://mirfatif.github.io/adb-guide/ar/adb-connect-svc/"/>
@@ -28,7 +28,7 @@
     </url>
     <url>
         <loc>https://mirfatif.github.io/adb-guide/adb-limits/</loc>
-        <lastmod>2025-11-19</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://mirfatif.github.io/adb-guide/adb-limits/"/>
         <xhtml:link rel="alternate" hreflang="ar" href="https://mirfatif.github.io/adb-guide/ar/adb-limits/"/>
@@ -41,7 +41,7 @@
     </url>
     <url>
         <loc>https://mirfatif.github.io/adb-guide/android-10/</loc>
-        <lastmod>2025-11-19</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://mirfatif.github.io/adb-guide/android-10/"/>
         <xhtml:link rel="alternate" hreflang="ar" href="https://mirfatif.github.io/adb-guide/ar/android-10/"/>
@@ -54,7 +54,7 @@
     </url>
     <url>
         <loc>https://mirfatif.github.io/adb-guide/android-11/</loc>
-        <lastmod>2025-11-19</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://mirfatif.github.io/adb-guide/android-11/"/>
         <xhtml:link rel="alternate" hreflang="ar" href="https://mirfatif.github.io/adb-guide/ar/android-11/"/>
@@ -67,7 +67,7 @@
     </url>
     <url>
         <loc>https://mirfatif.github.io/adb-guide/dev-opts/</loc>
-        <lastmod>2025-11-19</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://mirfatif.github.io/adb-guide/dev-opts/"/>
         <xhtml:link rel="alternate" hreflang="ar" href="https://mirfatif.github.io/adb-guide/ar/dev-opts/"/>
@@ -80,7 +80,7 @@
     </url>
     <url>
         <loc>https://mirfatif.github.io/adb-guide/de/</loc>
-        <lastmod>2025-11-19</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="de" href="https://mirfatif.github.io/adb-guide/de/"/>
         <xhtml:link rel="alternate" hreflang="ar" href="https://mirfatif.github.io/adb-guide/ar/"/>
@@ -93,7 +93,7 @@
     </url>
     <url>
         <loc>https://mirfatif.github.io/adb-guide/de/adb-connect-svc/</loc>
-        <lastmod>2025-11-19</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="de" href="https://mirfatif.github.io/adb-guide/de/adb-connect-svc/"/>
         <xhtml:link rel="alternate" hreflang="ar" href="https://mirfatif.github.io/adb-guide/ar/adb-connect-svc/"/>
@@ -106,7 +106,7 @@
     </url>
     <url>
         <loc>https://mirfatif.github.io/adb-guide/de/adb-limits/</loc>
-        <lastmod>2025-11-19</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="de" href="https://mirfatif.github.io/adb-guide/de/adb-limits/"/>
         <xhtml:link rel="alternate" hreflang="ar" href="https://mirfatif.github.io/adb-guide/ar/adb-limits/"/>
@@ -119,7 +119,7 @@
     </url>
     <url>
         <loc>https://mirfatif.github.io/adb-guide/de/android-10/</loc>
-        <lastmod>2025-11-19</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="de" href="https://mirfatif.github.io/adb-guide/de/android-10/"/>
         <xhtml:link rel="alternate" hreflang="ar" href="https://mirfatif.github.io/adb-guide/ar/android-10/"/>
@@ -132,7 +132,7 @@
     </url>
     <url>
         <loc>https://mirfatif.github.io/adb-guide/de/android-11/</loc>
-        <lastmod>2025-11-19</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="de" href="https://mirfatif.github.io/adb-guide/de/android-11/"/>
         <xhtml:link rel="alternate" hreflang="ar" href="https://mirfatif.github.io/adb-guide/ar/android-11/"/>
@@ -145,7 +145,7 @@
     </url>
     <url>
         <loc>https://mirfatif.github.io/adb-guide/de/dev-opts/</loc>
-        <lastmod>2025-11-19</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="de" href="https://mirfatif.github.io/adb-guide/de/dev-opts/"/>
         <xhtml:link rel="alternate" hreflang="ar" href="https://mirfatif.github.io/adb-guide/ar/dev-opts/"/>
@@ -158,7 +158,7 @@
     </url>
     <url>
         <loc>https://mirfatif.github.io/adb-guide/es/</loc>
-        <lastmod>2025-11-19</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://mirfatif.github.io/adb-guide/es/"/>
         <xhtml:link rel="alternate" hreflang="ar" href="https://mirfatif.github.io/adb-guide/ar/"/>
@@ -171,7 +171,7 @@
     </url>
     <url>
         <loc>https://mirfatif.github.io/adb-guide/es/adb-connect-svc/</loc>
-        <lastmod>2025-11-19</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://mirfatif.github.io/adb-guide/es/adb-connect-svc/"/>
         <xhtml:link rel="alternate" hreflang="ar" href="https://mirfatif.github.io/adb-guide/ar/adb-connect-svc/"/>
@@ -184,7 +184,7 @@
     </url>
     <url>
         <loc>https://mirfatif.github.io/adb-guide/es/adb-limits/</loc>
-        <lastmod>2025-11-19</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://mirfatif.github.io/adb-guide/es/adb-limits/"/>
         <xhtml:link rel="alternate" hreflang="ar" href="https://mirfatif.github.io/adb-guide/ar/adb-limits/"/>
@@ -197,7 +197,7 @@
     </url>
     <url>
         <loc>https://mirfatif.github.io/adb-guide/es/android-10/</loc>
-        <lastmod>2025-11-19</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://mirfatif.github.io/adb-guide/es/android-10/"/>
         <xhtml:link rel="alternate" hreflang="ar" href="https://mirfatif.github.io/adb-guide/ar/android-10/"/>
@@ -210,7 +210,7 @@
     </url>
     <url>
         <loc>https://mirfatif.github.io/adb-guide/es/android-11/</loc>
-        <lastmod>2025-11-19</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://mirfatif.github.io/adb-guide/es/android-11/"/>
         <xhtml:link rel="alternate" hreflang="ar" href="https://mirfatif.github.io/adb-guide/ar/android-11/"/>
@@ -223,7 +223,7 @@
     </url>
     <url>
         <loc>https://mirfatif.github.io/adb-guide/es/dev-opts/</loc>
-        <lastmod>2025-11-19</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://mirfatif.github.io/adb-guide/es/dev-opts/"/>
         <xhtml:link rel="alternate" hreflang="ar" href="https://mirfatif.github.io/adb-guide/ar/dev-opts/"/>
@@ -236,7 +236,7 @@
     </url>
     <url>
         <loc>https://mirfatif.github.io/adb-guide/fr/</loc>
-        <lastmod>2025-11-19</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="fr" href="https://mirfatif.github.io/adb-guide/fr/"/>
         <xhtml:link rel="alternate" hreflang="ar" href="https://mirfatif.github.io/adb-guide/ar/"/>
@@ -249,7 +249,7 @@
     </url>
     <url>
         <loc>https://mirfatif.github.io/adb-guide/fr/adb-connect-svc/</loc>
-        <lastmod>2025-11-19</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="fr" href="https://mirfatif.github.io/adb-guide/fr/adb-connect-svc/"/>
         <xhtml:link rel="alternate" hreflang="ar" href="https://mirfatif.github.io/adb-guide/ar/adb-connect-svc/"/>
@@ -262,7 +262,7 @@
     </url>
     <url>
         <loc>https://mirfatif.github.io/adb-guide/fr/adb-limits/</loc>
-        <lastmod>2025-11-19</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="fr" href="https://mirfatif.github.io/adb-guide/fr/adb-limits/"/>
         <xhtml:link rel="alternate" hreflang="ar" href="https://mirfatif.github.io/adb-guide/ar/adb-limits/"/>
@@ -275,7 +275,7 @@
     </url>
     <url>
         <loc>https://mirfatif.github.io/adb-guide/fr/android-10/</loc>
-        <lastmod>2025-11-19</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="fr" href="https://mirfatif.github.io/adb-guide/fr/android-10/"/>
         <xhtml:link rel="alternate" hreflang="ar" href="https://mirfatif.github.io/adb-guide/ar/android-10/"/>
@@ -288,7 +288,7 @@
     </url>
     <url>
         <loc>https://mirfatif.github.io/adb-guide/fr/android-11/</loc>
-        <lastmod>2025-11-19</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="fr" href="https://mirfatif.github.io/adb-guide/fr/android-11/"/>
         <xhtml:link rel="alternate" hreflang="ar" href="https://mirfatif.github.io/adb-guide/ar/android-11/"/>
@@ -301,7 +301,7 @@
     </url>
     <url>
         <loc>https://mirfatif.github.io/adb-guide/fr/dev-opts/</loc>
-        <lastmod>2025-11-19</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="fr" href="https://mirfatif.github.io/adb-guide/fr/dev-opts/"/>
         <xhtml:link rel="alternate" hreflang="ar" href="https://mirfatif.github.io/adb-guide/ar/dev-opts/"/>
@@ -314,7 +314,7 @@
     </url>
     <url>
         <loc>https://mirfatif.github.io/adb-guide/pt-BR/</loc>
-        <lastmod>2025-11-19</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="pt-BR" href="https://mirfatif.github.io/adb-guide/pt-BR/"/>
         <xhtml:link rel="alternate" hreflang="ar" href="https://mirfatif.github.io/adb-guide/ar/"/>
@@ -327,7 +327,7 @@
     </url>
     <url>
         <loc>https://mirfatif.github.io/adb-guide/pt-BR/adb-connect-svc/</loc>
-        <lastmod>2025-11-19</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="pt-BR" href="https://mirfatif.github.io/adb-guide/pt-BR/adb-connect-svc/"/>
         <xhtml:link rel="alternate" hreflang="ar" href="https://mirfatif.github.io/adb-guide/ar/adb-connect-svc/"/>
@@ -340,7 +340,7 @@
     </url>
     <url>
         <loc>https://mirfatif.github.io/adb-guide/pt-BR/adb-limits/</loc>
-        <lastmod>2025-11-19</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="pt-BR" href="https://mirfatif.github.io/adb-guide/pt-BR/adb-limits/"/>
         <xhtml:link rel="alternate" hreflang="ar" href="https://mirfatif.github.io/adb-guide/ar/adb-limits/"/>
@@ -353,7 +353,7 @@
     </url>
     <url>
         <loc>https://mirfatif.github.io/adb-guide/pt-BR/android-10/</loc>
-        <lastmod>2025-11-19</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="pt-BR" href="https://mirfatif.github.io/adb-guide/pt-BR/android-10/"/>
         <xhtml:link rel="alternate" hreflang="ar" href="https://mirfatif.github.io/adb-guide/ar/android-10/"/>
@@ -366,7 +366,7 @@
     </url>
     <url>
         <loc>https://mirfatif.github.io/adb-guide/pt-BR/android-11/</loc>
-        <lastmod>2025-11-19</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="pt-BR" href="https://mirfatif.github.io/adb-guide/pt-BR/android-11/"/>
         <xhtml:link rel="alternate" hreflang="ar" href="https://mirfatif.github.io/adb-guide/ar/android-11/"/>
@@ -379,7 +379,7 @@
     </url>
     <url>
         <loc>https://mirfatif.github.io/adb-guide/pt-BR/dev-opts/</loc>
-        <lastmod>2025-11-19</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="pt-BR" href="https://mirfatif.github.io/adb-guide/pt-BR/dev-opts/"/>
         <xhtml:link rel="alternate" hreflang="ar" href="https://mirfatif.github.io/adb-guide/ar/dev-opts/"/>
@@ -392,7 +392,7 @@
     </url>
     <url>
         <loc>https://mirfatif.github.io/adb-guide/ru/</loc>
-        <lastmod>2025-11-19</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ru" href="https://mirfatif.github.io/adb-guide/ru/"/>
         <xhtml:link rel="alternate" hreflang="ar" href="https://mirfatif.github.io/adb-guide/ar/"/>
@@ -405,7 +405,7 @@
     </url>
     <url>
         <loc>https://mirfatif.github.io/adb-guide/ru/adb-connect-svc/</loc>
-        <lastmod>2025-11-19</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ru" href="https://mirfatif.github.io/adb-guide/ru/adb-connect-svc/"/>
         <xhtml:link rel="alternate" hreflang="ar" href="https://mirfatif.github.io/adb-guide/ar/adb-connect-svc/"/>
@@ -418,7 +418,7 @@
     </url>
     <url>
         <loc>https://mirfatif.github.io/adb-guide/ru/adb-limits/</loc>
-        <lastmod>2025-11-19</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ru" href="https://mirfatif.github.io/adb-guide/ru/adb-limits/"/>
         <xhtml:link rel="alternate" hreflang="ar" href="https://mirfatif.github.io/adb-guide/ar/adb-limits/"/>
@@ -431,7 +431,7 @@
     </url>
     <url>
         <loc>https://mirfatif.github.io/adb-guide/ru/android-10/</loc>
-        <lastmod>2025-11-19</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ru" href="https://mirfatif.github.io/adb-guide/ru/android-10/"/>
         <xhtml:link rel="alternate" hreflang="ar" href="https://mirfatif.github.io/adb-guide/ar/android-10/"/>
@@ -444,7 +444,7 @@
     </url>
     <url>
         <loc>https://mirfatif.github.io/adb-guide/ru/android-11/</loc>
-        <lastmod>2025-11-19</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ru" href="https://mirfatif.github.io/adb-guide/ru/android-11/"/>
         <xhtml:link rel="alternate" hreflang="ar" href="https://mirfatif.github.io/adb-guide/ar/android-11/"/>
@@ -457,7 +457,7 @@
     </url>
     <url>
         <loc>https://mirfatif.github.io/adb-guide/ru/dev-opts/</loc>
-        <lastmod>2025-11-19</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ru" href="https://mirfatif.github.io/adb-guide/ru/dev-opts/"/>
         <xhtml:link rel="alternate" hreflang="ar" href="https://mirfatif.github.io/adb-guide/ar/dev-opts/"/>
@@ -470,7 +470,7 @@
     </url>
     <url>
         <loc>https://mirfatif.github.io/adb-guide/ar/</loc>
-        <lastmod>2025-11-19</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ar" href="https://mirfatif.github.io/adb-guide/ar/"/>
         <xhtml:link rel="alternate" hreflang="de" href="https://mirfatif.github.io/adb-guide/de/"/>
@@ -483,7 +483,7 @@
     </url>
     <url>
         <loc>https://mirfatif.github.io/adb-guide/ar/adb-connect-svc/</loc>
-        <lastmod>2025-11-19</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ar" href="https://mirfatif.github.io/adb-guide/ar/adb-connect-svc/"/>
         <xhtml:link rel="alternate" hreflang="de" href="https://mirfatif.github.io/adb-guide/de/adb-connect-svc/"/>
@@ -496,7 +496,7 @@
     </url>
     <url>
         <loc>https://mirfatif.github.io/adb-guide/ar/adb-limits/</loc>
-        <lastmod>2025-11-19</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ar" href="https://mirfatif.github.io/adb-guide/ar/adb-limits/"/>
         <xhtml:link rel="alternate" hreflang="de" href="https://mirfatif.github.io/adb-guide/de/adb-limits/"/>
@@ -509,7 +509,7 @@
     </url>
     <url>
         <loc>https://mirfatif.github.io/adb-guide/ar/android-10/</loc>
-        <lastmod>2025-11-19</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ar" href="https://mirfatif.github.io/adb-guide/ar/android-10/"/>
         <xhtml:link rel="alternate" hreflang="de" href="https://mirfatif.github.io/adb-guide/de/android-10/"/>
@@ -522,7 +522,7 @@
     </url>
     <url>
         <loc>https://mirfatif.github.io/adb-guide/ar/android-11/</loc>
-        <lastmod>2025-11-19</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ar" href="https://mirfatif.github.io/adb-guide/ar/android-11/"/>
         <xhtml:link rel="alternate" hreflang="de" href="https://mirfatif.github.io/adb-guide/de/android-11/"/>
@@ -535,7 +535,7 @@
     </url>
     <url>
         <loc>https://mirfatif.github.io/adb-guide/ar/dev-opts/</loc>
-        <lastmod>2025-11-19</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ar" href="https://mirfatif.github.io/adb-guide/ar/dev-opts/"/>
         <xhtml:link rel="alternate" hreflang="de" href="https://mirfatif.github.io/adb-guide/de/dev-opts/"/>
@@ -548,7 +548,7 @@
     </url>
     <url>
         <loc>https://mirfatif.github.io/adb-guide/zh/</loc>
-        <lastmod>2025-11-19</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://mirfatif.github.io/adb-guide/zh/"/>
         <xhtml:link rel="alternate" hreflang="ar" href="https://mirfatif.github.io/adb-guide/ar/"/>
@@ -561,7 +561,7 @@
     </url>
     <url>
         <loc>https://mirfatif.github.io/adb-guide/zh/adb-connect-svc/</loc>
-        <lastmod>2025-11-19</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://mirfatif.github.io/adb-guide/zh/adb-connect-svc/"/>
         <xhtml:link rel="alternate" hreflang="ar" href="https://mirfatif.github.io/adb-guide/ar/adb-connect-svc/"/>
@@ -574,7 +574,7 @@
     </url>
     <url>
         <loc>https://mirfatif.github.io/adb-guide/zh/adb-limits/</loc>
-        <lastmod>2025-11-19</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://mirfatif.github.io/adb-guide/zh/adb-limits/"/>
         <xhtml:link rel="alternate" hreflang="ar" href="https://mirfatif.github.io/adb-guide/ar/adb-limits/"/>
@@ -587,7 +587,7 @@
     </url>
     <url>
         <loc>https://mirfatif.github.io/adb-guide/zh/android-10/</loc>
-        <lastmod>2025-11-19</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://mirfatif.github.io/adb-guide/zh/android-10/"/>
         <xhtml:link rel="alternate" hreflang="ar" href="https://mirfatif.github.io/adb-guide/ar/android-10/"/>
@@ -600,7 +600,7 @@
     </url>
     <url>
         <loc>https://mirfatif.github.io/adb-guide/zh/android-11/</loc>
-        <lastmod>2025-11-19</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://mirfatif.github.io/adb-guide/zh/android-11/"/>
         <xhtml:link rel="alternate" hreflang="ar" href="https://mirfatif.github.io/adb-guide/ar/android-11/"/>
@@ -613,7 +613,7 @@
     </url>
     <url>
         <loc>https://mirfatif.github.io/adb-guide/zh/dev-opts/</loc>
-        <lastmod>2025-11-19</lastmod>
+        <lastmod>2025-11-24</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://mirfatif.github.io/adb-guide/zh/dev-opts/"/>
         <xhtml:link rel="alternate" hreflang="ar" href="https://mirfatif.github.io/adb-guide/ar/dev-opts/"/>
